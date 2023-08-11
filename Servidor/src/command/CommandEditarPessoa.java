@@ -1,11 +1,11 @@
 package command;
 
-import observer.ObserverPessoa;
+import observer.Observer;
 import dao.PessoaDao;
 
 public class CommandEditarPessoa extends CommandPessoa{
 
-	CommandEditarPessoa(String[] dados, ObserverPessoa obs) {
+	CommandEditarPessoa(String[] dados, Observer obs) {
 		super(dados, obs);
 	}
 

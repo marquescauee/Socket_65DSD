@@ -2,11 +2,11 @@ package command;
 
 import dao.PessoaDao;
 import models.Pessoa;
-import observer.ObserverPessoa;
+import observer.Observer;
 
 public class CommandCriarPessoa extends CommandPessoa {
 
-	public CommandCriarPessoa(String[] dados, ObserverPessoa obs) {
+	public CommandCriarPessoa(String[] dados, Observer obs) {
 		super(dados, obs);
 	}
 

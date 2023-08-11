@@ -2,8 +2,7 @@ package servidor;
 
 import command.Command;
 import command.CommandFactoryPessoa;
-import models.Pessoa;
-import observer.ObserverPessoa;
+import observer.Observer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +23,7 @@ public class Servidor {
 
 				OutputStream out = conn.getOutputStream();
 
-				ObserverPessoa obs = new ObserverPessoa();
+				Observer obs = new Observer();
 
 				InputStream in = conn.getInputStream();
 
@@ -50,8 +49,8 @@ public class Servidor {
 
 						command.execute();
 						//out.write(PessoaDao.getInstance().getPessoaPorCpf(splitada[1]).toString().getBytes());
-						System.out.println(obs.msg());
-						out.write(obs.msg().getBytes());
+						System.out.println(obs.getMsg());
+						out.write(obs.getMsg().getBytes());
 
 						qtdDadosBrutos = in.read(dadosBrutos);
 					} catch (Exception e) {

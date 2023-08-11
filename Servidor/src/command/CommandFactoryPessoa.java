@@ -1,12 +1,12 @@
 package command;
 
-import observer.ObserverPessoa;
+import observer.Observer;
 
 public class CommandFactoryPessoa {
 	
-	private ObserverPessoa observer;
+	private Observer observer;
 	
-	public CommandFactoryPessoa(ObserverPessoa observer){
+	public CommandFactoryPessoa(Observer observer){
 		this.observer = observer;
 	}
 	

@@ -1,11 +1,11 @@
 package command;
 
-import observer.ObserverPessoa;
+import observer.Observer;
 import dao.PessoaDao;
 
 public class CommandDeletarPessoa extends CommandPessoa{
 	
-	public CommandDeletarPessoa(String[] dados, ObserverPessoa obs){
+	public CommandDeletarPessoa(String[] dados, Observer obs){
 		super(dados, obs);
 	}
 	
