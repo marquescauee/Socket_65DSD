@@ -1,6 +1,6 @@
-package Command;
+package command;
 
-import Observer.ObserverPessoa;
+import observer.ObserverPessoa;
 
 public abstract class CommandPessoa implements Command{
 

@@ -1,17 +1,15 @@
 package servidor;
 
+import command.Command;
+import command.CommandFactoryPessoa;
+import models.Pessoa;
+import observer.ObserverPessoa;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import Command.Command;
-import Command.CommandFactoryPessoa;
-import Observer.ObserverPessoa;
-import Command.CommandCriarPessoa;
-import dao.PessoaDao;
-import models.Pessoa;
 
 public class Servidor {
 
@@ -25,8 +23,8 @@ public class Servidor {
 				System.out.println("Conectado com: " + conn.getInetAddress().getHostAddress());
 
 				OutputStream out = conn.getOutputStream();
-				
-				ObserverPessoa obs = new ObserverPessoa();  
+
+				ObserverPessoa obs = new ObserverPessoa();
 
 				InputStream in = conn.getInputStream();
 
@@ -41,7 +39,7 @@ public class Servidor {
 						String[] splitada = stringDados.split(";");
 //
 //						Pessoa p = new Pessoa(splitada[1]);
-//						
+//
 //						if (splitada.length > 1) {
 //							p.setNome(splitada[2]);
 //							p.setEndereco(splitada[3]);
@@ -54,7 +52,7 @@ public class Servidor {
 						//out.write(PessoaDao.getInstance().getPessoaPorCpf(splitada[1]).toString().getBytes());
 						System.out.println(obs.msg());
 						out.write(obs.msg().getBytes());
-						
+
 						qtdDadosBrutos = in.read(dadosBrutos);
 					} catch (Exception e) {
 						System.out.println(e.getMessage());
@@ -87,7 +85,7 @@ public class Servidor {
 //out.write(msgErro.getBytes());
 //}
 //
-//}
+//
 //else {
 //out.write(msgErro.getBytes());
 //}

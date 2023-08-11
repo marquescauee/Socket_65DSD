@@ -1,6 +1,6 @@
-package Command;
+package command;
 
-import Observer.ObserverPessoa;
+import observer.ObserverPessoa;
 import dao.PessoaDao;
 
 public class CommandEditarPessoa extends CommandPessoa{

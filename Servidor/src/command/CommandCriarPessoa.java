@@ -1,8 +1,8 @@
-package Command;
+package command;
 
-import Observer.ObserverPessoa;
 import dao.PessoaDao;
 import models.Pessoa;
+import observer.ObserverPessoa;
 
 public class CommandCriarPessoa extends CommandPessoa {
 
