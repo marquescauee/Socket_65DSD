@@ -18,8 +18,10 @@ public class CommandCriarPessoa extends CommandPessoa {
 		p.setNome(splitada[2]);
 		p.setEndereco(splitada[3]);
 
-	    PessoaDao.getInstance().insertPessoa(p);
-	    obs.setMsg("criado");
+		
+		PessoaDao.getInstance().insertPessoa(p);
+	    //String msg = PessoaDao.getInstance().insertPessoa(p);
+	    //obs.setMsg(msg);
 	}
 
 }

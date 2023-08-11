@@ -17,6 +17,8 @@ public class CommandFactoryPessoa {
 			case "insert": return new CommandCriarPessoa(dados, observer);
 			case "delete": return new CommandDeletarPessoa(dados, observer);
 			case "update": return new CommandEditarPessoa(dados, observer);
+			case "get": return new CommandGetPessoa(dados, observer);
+			case "list": return new CommandGetAllPessoas(dados, observer);
 		}
 		
 		return null;

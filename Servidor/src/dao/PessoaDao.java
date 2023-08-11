@@ -21,7 +21,12 @@ public class PessoaDao {
 		return instance;
 	}
 
-	public synchronized void insertPessoa(Pessoa p) {
+	public synchronized void insertPessoa(Pessoa p)  {
+		for (Pessoa pessoa : pessoas) {
+			if (pessoa.getCpf().equals(p.getCpf())) {
+				return ;
+			}
+		}
 		pessoas.add(p);
 	}
 
@@ -30,7 +35,7 @@ public class PessoaDao {
 			return "Sem pessoas cadastradas";
 		}
 		for (Pessoa pessoa : pessoas) {
-			if (pessoa.getCpf() == cpf) {
+			if (pessoa.getCpf().equals(cpf)) {
 				return pessoa.toString();
 			}
 		}
