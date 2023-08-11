@@ -2,7 +2,7 @@ package models;
 public class Banda {
     private String nome;
     private int qntdIntegrantes;
-    private int anoLacamentoPrimeiraMusica;
+    private int anoLancamentoPrimeiraMusica;
 
     public String getNome() {
         return nome;
@@ -20,11 +20,11 @@ public class Banda {
         this.qntdIntegrantes = qntdIntegrantes;
     }
 
-    public int getAnoLacamentoPrimeiraMusica() {
-        return anoLacamentoPrimeiraMusica;
+    public int getAnoLancamentoPrimeiraMusica() {
+        return anoLancamentoPrimeiraMusica;
     }
 
-    public void setAnoLacamentoPrimeiraMusica(int anoLacamentoPrimeiraMusica) {
-        this.anoLacamentoPrimeiraMusica = anoLacamentoPrimeiraMusica;
+    public void setAnoLancamentoPrimeiraMusica(int anoLancamentoPrimeiraMusica) {
+        this.anoLancamentoPrimeiraMusica = anoLancamentoPrimeiraMusica;
     }
 }
