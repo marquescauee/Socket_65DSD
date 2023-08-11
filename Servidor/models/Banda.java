@@ -1,3 +1,4 @@
+package models;
 public class Banda {
     private String nome;
     private int qntdIntegrantes;

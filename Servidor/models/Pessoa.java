@@ -1,3 +1,4 @@
+package models;
 public class Pessoa {
     private String nome;
     private String cpf;
@@ -26,4 +27,9 @@ public class Pessoa {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    @Override
+	public String toString() {
+		return cpf + ";" +  nome + ";" + endereco;
+	}
 }
