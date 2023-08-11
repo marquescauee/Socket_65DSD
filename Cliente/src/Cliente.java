@@ -8,46 +8,44 @@ import java.util.Scanner;
 public class Cliente {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
-	
+
 		String opcao = "";
-		
-		while(!opcao.equalsIgnoreCase("sair")) {
-			System.out.println("Digite a op√ß√£o desejada no seguinte formato:");
+		Scanner s = new Scanner(System.in);
+		while (!opcao.equalsIgnoreCase("sair")) {
+			System.out.println("Digite a opÁ„o desejada no seguinte formato:");
 			System.out.println("=====================================================");
-			System.out.println("insert;cpf;nome;endere√ßo \t[inserir uma nova pessoa]\n");
-			System.out.println("update;cpf;nome;endere√ßo \t[atualizar os dados de uma pessoa]\n");
+			System.out.println("insert;cpf;nome;endereÁo \t[inserir uma nova pessoa]\n");
+			System.out.println("update;cpf;nome;endereÁo \t[atualizar os dados de uma pessoa]\n");
 			System.out.println("delete;cpf \t\t\t[remover uma pessoa]\n");
 			System.out.println("get;cpf; \t\t\t[recuperar uma pessoa]\n");
-			System.out.println("getAll \t\t\t\t[recuperar todas as pessoas]\n");
-			System.out.println("sair \t\t\t\t[encerrar a aplica√ß√£o]\n");
+			System.out.println("list \t\t\t\t[recuperar todas as pessoas]\n");
+			System.out.println("sair \t\t\t\t[encerra a aplicaÁ„o]\n");
 
-			
-			Scanner s = new Scanner(System.in);
+		
 			opcao = s.next();
-			
-			if(opcao.equalsIgnoreCase("sair")) continue;
-			
+
 			try (Socket conn = new Socket("10.15.120.70", 80);) {
-				System.out.println("Conectado!");
 				InputStream in = conn.getInputStream();
-				
+
 				OutputStream out = conn.getOutputStream();
 				out.write(opcao.getBytes());
-				
+
 				byte[] dadosBrutos = new byte[1024];
 				int qtdDadosBrutos = in.read(dadosBrutos);
-				while(qtdDadosBrutos >= 0) {
+				while (qtdDadosBrutos >= 0) {
 					String stringDados = new String(dadosBrutos, 0, qtdDadosBrutos);
+					System.out.println("===================================\n");
 					System.out.println(stringDados);
+					System.out.println("===================================\n");
 					qtdDadosBrutos = in.read(dadosBrutos);
 				}
-			} catch(UnknownHostException e) {
-				System.out.println("Host n√£o encontrado");
+				opcao = s.nextLine();
+			} catch (UnknownHostException e) {
+				System.out.println("Host n„o encontrado");
 				e.printStackTrace();
-			} finally {
-				s.close();
 			}
 		}
+		s.close();
 	}
 
 }
