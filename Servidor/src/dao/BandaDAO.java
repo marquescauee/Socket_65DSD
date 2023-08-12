@@ -53,7 +53,7 @@ public class BandaDAO {
 				return b.toString();
 			}
 		}
-		return ("Banda não encontrada");
+		return ("Banda nao encontrada");
 	}
 	
 	public synchronized List<Banda> getBandas(){

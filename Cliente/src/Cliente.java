@@ -12,10 +12,10 @@ public class Cliente {
 		String opcao = "";
 		Scanner s = new Scanner(System.in);
 		while (!opcao.equalsIgnoreCase("sair")) {
-			System.out.println("Digite a opção desejada no seguinte formato:");
+			System.out.println("Digite a opcao desejada no seguinte formato:");
 			System.out.println("=====================================================");
-			System.out.println("insert;cpf;nome;endereço \t[inserir uma nova pessoa]\n");
-			System.out.println("update;cpf;nome;endereço \t[atualizar os dados de uma pessoa]\n");
+			System.out.println("insert;cpf;nome;endereco \t[inserir uma nova pessoa]\n");
+			System.out.println("update;cpf;nome;endereco \t[atualizar os dados de uma pessoa]\n");
 			System.out.println("delete;cpf \t\t\t[remover uma pessoa]\n");
 			System.out.println("get;cpf; \t\t\t[recuperar uma pessoa]\n");
 			System.out.println("list \t\t\t\t[recuperar todas as pessoas]\n");
@@ -29,13 +29,15 @@ public class Cliente {
 			System.out.println("getBanda;nome; \t\t\t\t\t\t[recuperar uma banda]\n");
 			System.out.println("listBandas \t\t\t\t\t\t\t[listar todas as bandas]\n");
 			System.out.println("=====================================================");
-			
-			
-			System.out.println("sair \t\t[encerrar a aplicação]\n");
+						
+			System.out.println("sair \t\t[encerrar a aplicacao]\n");
 
-		
 			opcao = s.next();
 
+			if(opcao.equals("sair")) {
+				break;
+			}
+			
 			try (Socket conn = new Socket("10.15.120.70", 80);) {
 				InputStream in = conn.getInputStream();
 
@@ -53,7 +55,7 @@ public class Cliente {
 				}
 				opcao = s.nextLine();
 			} catch (UnknownHostException e) {
-				System.out.println("Host não encontrado");
+				System.out.println("Host nao encontrado");
 				e.printStackTrace();
 			}
 		}
