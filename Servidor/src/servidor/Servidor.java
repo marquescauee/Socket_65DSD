@@ -10,7 +10,7 @@ import java.net.Socket;
 
 import command.pessoa.Command;
 import command.pessoa.CommandCriarPessoa;
-import command.pessoa.CommandFactoryPessoa;
+import command.pessoa.CommandFactory;
 
 public class Servidor {
 
@@ -46,7 +46,7 @@ public class Servidor {
 //							p.setEndereco(splitada[3]);
 //						}
 
-						CommandFactoryPessoa cmdP = new CommandFactoryPessoa(obs);
+						CommandFactory cmdP = new CommandFactory(obs);
 						Command command = cmdP.getCommand(splitada);
 
 						command.execute();

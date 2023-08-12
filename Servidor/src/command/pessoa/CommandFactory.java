@@ -9,11 +9,11 @@ import command.banda.CommandGetBanda;
 import command.banda.CommandInserirIntegrante;
 import observer.Observer;
 
-public class CommandFactoryPessoa {
+public class CommandFactory {
 	
 	private Observer observer;
 	
-	public CommandFactoryPessoa(Observer observer){
+	public CommandFactory(Observer observer){
 		this.observer = observer;
 	}
 
