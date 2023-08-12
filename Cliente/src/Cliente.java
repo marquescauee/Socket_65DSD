@@ -22,12 +22,12 @@ public class Cliente {
 
 			System.out.println("=====================================================");
 			System.out.println("insertBanda;nome;qtdIntegrantes;anoPrimeiraMusica \t[inserir uma nova banda]\n");
-			System.out.println("updateBanda;nome;qtdIntegrantes;anoPrimeiraMusica \t[atualizar os dados de uma banda]\n");
-			System.out.println("delete;nome \t\t\t\t\t\t[remover uma banda]\n");
+			System.out.println("updateBanda;nome;anoPrimeiraMusica \t[atualizar os dados de uma banda]\n");
+			System.out.println("deleteBanda;nome \t\t\t\t\t\t[remover uma banda]\n");
 			System.out.println("insertIntegrante;nomeBanda;cpf \t\t\t\t[adicionar integrante a uma banda]\n");
-			System.out.println("insertIntegrante;nomeBanda;cpf \t\t\t\t[remover integrante de uma banda]\n");
-			System.out.println("get;nome; \t\t\t\t\t\t[recuperar uma banda]\n");
-			System.out.println("list \t\t\t\t\t\t\t[listar todas as bandas]\n");
+			System.out.println("deleteIntegrante;nomeBanda;cpf \t\t\t\t[remover integrante de uma banda]\n");
+			System.out.println("getBanda;nome; \t\t\t\t\t\t[recuperar uma banda]\n");
+			System.out.println("listBandas \t\t\t\t\t\t\t[listar todas as bandas]\n");
 			System.out.println("=====================================================");
 			
 			
@@ -53,7 +53,7 @@ public class Cliente {
 				}
 				opcao = s.nextLine();
 			} catch (UnknownHostException e) {
-				System.out.println("Host n�o encontrado");
+				System.out.println("Host não encontrado");
 				e.printStackTrace();
 			}
 		}

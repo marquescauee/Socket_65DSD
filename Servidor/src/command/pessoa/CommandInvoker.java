@@ -1,4 +1,4 @@
-package command;
+package command.pessoa;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,13 +1,12 @@
-package command;
+package command.pessoa;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import dao.PessoaDao;
+import dao.PessoaDAO;
 import models.Pessoa;
 import observer.Observer;
 
-public class CommandGetAllPessoas extends CommandPessoa {
+public class CommandGetAllPessoas extends CommandImpl {
 
 	CommandGetAllPessoas(String[] dados, Observer obs) {
 		super(dados, obs);
@@ -15,14 +14,14 @@ public class CommandGetAllPessoas extends CommandPessoa {
 
 	@Override
 	public void execute() {
-		List<Pessoa> pessoas = PessoaDao.getInstance().getPessoas();
+		List<Pessoa> pessoas = PessoaDAO.getInstance().getPessoas();
 		int qntdPessoas = pessoas.size();
 		
 		String msg  = qntdPessoas + "\n";
 		msg = ((qntdPessoas > 0 && qntdPessoas < 10 ) ? "0"  : "") + msg;
 		
 		for (Pessoa pessoa : pessoas) {
-			msg+= pessoa + "\n";
+			msg+= pessoa;
 		}
 		obs.setMsg(msg);
 	}

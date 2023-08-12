@@ -1,8 +1,5 @@
 package servidor;
 
-import command.Command;
-import command.CommandCriarPessoa;
-import command.CommandFactoryPessoa;
 import observer.Observer;
 
 import java.io.IOException;
@@ -10,6 +7,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import command.pessoa.Command;
+import command.pessoa.CommandCriarPessoa;
+import command.pessoa.CommandFactoryPessoa;
 
 public class Servidor {
 

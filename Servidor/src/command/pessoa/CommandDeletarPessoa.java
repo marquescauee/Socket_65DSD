@@ -1,9 +1,9 @@
-package command;
+package command.pessoa;
 
 import observer.Observer;
-import dao.PessoaDao;
+import dao.PessoaDAO;
 
-public class CommandDeletarPessoa extends CommandPessoa{
+public class CommandDeletarPessoa extends CommandImpl {
 	
 	public CommandDeletarPessoa(String[] dados, Observer obs){
 		super(dados, obs);
@@ -12,7 +12,7 @@ public class CommandDeletarPessoa extends CommandPessoa{
 	@Override
 	public void execute() {
 		String cpf = dados[1];
-		String msg = PessoaDao.getInstance().removePessoaPorCpf(cpf);
+		String msg = PessoaDAO.getInstance().removePessoaPorCpf(cpf);
 		obs.setMsg(msg);
 	}
 

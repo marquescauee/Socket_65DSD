@@ -1,10 +1,10 @@
-package command;
+package command.pessoa;
 
-import dao.PessoaDao;
+import dao.PessoaDAO;
 import models.Pessoa;
 import observer.Observer;
 
-public class CommandCriarPessoa extends CommandPessoa {
+public class CommandCriarPessoa extends CommandImpl {
 
 	public CommandCriarPessoa(String[] dados, Observer obs) {
 		super(dados, obs);
@@ -19,7 +19,7 @@ public class CommandCriarPessoa extends CommandPessoa {
 		p.setEndereco(splitada[3]);
 
 		
-		PessoaDao.getInstance().insertPessoa(p);
+		PessoaDAO.getInstance().insertPessoa(p);
 	    //String msg = PessoaDao.getInstance().insertPessoa(p);
 	    //obs.setMsg(msg);
 	}

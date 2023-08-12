@@ -5,18 +5,18 @@ import models.Pessoa;
 
 import java.util.ArrayList;
 
-public class PessoaDao {
+public class PessoaDAO {
 
 	private static List<Pessoa> pessoas = new ArrayList<>();
-	private static PessoaDao instance;
+	private static PessoaDAO instance;
 
-	private PessoaDao() {
+	private PessoaDAO() {
 
 	}
 
-	public synchronized static PessoaDao getInstance() {
+	public synchronized static PessoaDAO getInstance() {
 		if (instance == null) {
-			instance = new PessoaDao();
+			instance = new PessoaDAO();
 		}
 		return instance;
 	}

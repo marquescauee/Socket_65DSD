@@ -1,13 +1,13 @@
-package command;
+package command.pessoa;
 
 import observer.Observer;
 
-public abstract class CommandPessoa implements Command{
+public abstract class CommandImpl implements Command{
 
 	public String [] dados;
 	public Observer obs;
 	
-	CommandPessoa(String[] dados, Observer obs){
+	public CommandImpl(String[] dados, Observer obs){
 		this.dados= dados;
 		this.obs = obs;
 	}

@@ -1,9 +1,9 @@
-package command;
+package command.pessoa;
 
 import observer.Observer;
-import dao.PessoaDao;
+import dao.PessoaDAO;
 
-public class CommandEditarPessoa extends CommandPessoa{
+public class CommandEditarPessoa extends CommandImpl {
 
 	CommandEditarPessoa(String[] dados, Observer obs) {
 		super(dados, obs);
@@ -11,7 +11,7 @@ public class CommandEditarPessoa extends CommandPessoa{
 
 	@Override
 	public void execute() {
-		String msg =PessoaDao.getInstance().atualizarPessoa(dados);
+		String msg =PessoaDAO.getInstance().atualizarPessoa(dados);
 		obs.setMsg(msg);
 	}
 
