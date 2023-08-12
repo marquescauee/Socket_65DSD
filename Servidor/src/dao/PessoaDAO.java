@@ -29,7 +29,7 @@ public class PessoaDAO {
 		}
 		pessoas.add(p);
 	}
-
+	
 	public synchronized String getPessoaPorCpf(String cpf){
 		if(pessoas.isEmpty()) {
 			return "Sem pessoas cadastradas";

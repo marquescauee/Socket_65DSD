@@ -21,7 +21,7 @@ public class CommandGetAllPessoas extends CommandImpl {
 		msg = ((qntdPessoas > 0 && qntdPessoas < 10 ) ? "0"  : "") + msg;
 		
 		for (Pessoa pessoa : pessoas) {
-			msg+= pessoa;
+			msg+= pessoa + "\n";
 		}
 		obs.setMsg(msg);
 	}

@@ -1,6 +1,7 @@
 package servidor;
 
 import observer.Observer;
+import command.banda.*;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,9 +52,11 @@ public class Servidor {
 
 						command.execute();
 						//out.write(PessoaDao.getInstance().getPessoaPorCpf(splitada[1]).toString().getBytes());
-						if(command.getClass() != CommandCriarPessoa.class) {
-							out.write(obs.getMsg().getBytes());
+						if(command.getClass() == CommandCriarPessoa.class || command.getClass() == CommandCriarBanda.class  ) {
+							out.close();
+							break;
 						}
+						out.write(obs.getMsg().getBytes());
 						
 						out.close();
 						break;

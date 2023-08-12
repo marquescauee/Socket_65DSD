@@ -25,6 +25,16 @@ public class Banda {
     	this.integrantes.remove(p);
     }
     
+    public boolean removeIntegrantePorCpf(String cpf) {
+    	for(Pessoa p : integrantes) {
+    		if(p.getCpf().equals(cpf)) {
+    			integrantes.remove(p);
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    
     public List<Pessoa> getIntegrantes() {
 		return integrantes;
 	}
@@ -45,8 +55,16 @@ public class Banda {
         this.anoLancamentoPrimeiraMusica = anoLancamentoPrimeiraMusica;
     }
 
+    
+    
 	@Override
 	public String toString() {
-		return nome + ";" + qntdIntegrantes + ";" + anoLancamentoPrimeiraMusica + "\n" + integrantes;
+		String integrantesToString = "";
+		
+		for(Pessoa p : integrantes) {
+			integrantesToString += "\t ->" + p + "\n";
+		}
+		
+		return nome + ";" + qntdIntegrantes + ";" + anoLancamentoPrimeiraMusica + "\n" + integrantesToString;
 	}
 }

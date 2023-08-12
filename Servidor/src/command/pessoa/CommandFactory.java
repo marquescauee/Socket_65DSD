@@ -27,8 +27,8 @@ public class CommandFactory {
 			case "list": return new CommandGetAllPessoas(dados, observer);
 			
 			case "insertBanda": return new CommandCriarBanda(dados, observer);
-			case "updateBanda": return new CommandDeletarBanda(dados, observer);
-			case "deleteBanda": return new CommandEditarBanda(dados, observer);
+			case "updateBanda": return new CommandEditarBanda(dados, observer);
+			case "deleteBanda": return new CommandDeletarBanda(dados, observer);
 			case "insertIntegrante": return new CommandInserirIntegrante(dados, observer);
 			case "deleteIntegrante": return new CommandDeletarIntegrante(dados, observer);
 			case "getBanda": return new CommandGetBanda(dados, observer);

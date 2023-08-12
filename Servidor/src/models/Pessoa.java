@@ -30,6 +30,6 @@ public class Pessoa {
 
     @Override
 	public String toString() {
-		return cpf + ";" +  nome + ";" + endereco + "\n";
+		return cpf + ";" +  nome + ";" + endereco ;
 	}
 }

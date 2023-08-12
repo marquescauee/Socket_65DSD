@@ -28,20 +28,26 @@ public class BandaDAO {
 		bandas.add(banda);
 	}
 	
-	public synchronized void insertIntegrante(String nomeBanda, Pessoa p) {
+	public synchronized String insertIntegrante(String nomeBanda, Pessoa p) {
+	
 		for(Banda b : bandas) {
-			if(b.getNome().equals(nomeBanda) && b.getQntdIntegrantes() < b.getIntegrantes().size()) {
+			if(b.getNome().equals(nomeBanda) && b.getQntdIntegrantes() > b.getIntegrantes().size()) {
 				b.addIntegrante(p);
+				return "Integrante " + p.getNome() + " adicionado a banda " + b.getNome();
 			}
 		}
+		return "Banda nao encontrada";
 	}
 	
-	public synchronized void removeIntegrante(String nomeBanda, Pessoa p) {
+	public synchronized String removeIntegrante(String nomeBanda, Pessoa p) {
 		for(Banda b : bandas) {
-			if(b.getNome().equals(nomeBanda) && b.getIntegrantes().contains(p)) {
-				b.removeIntegrante(p);
-			}
+			if(b.getNome().equals(nomeBanda)) {
+				if(b.removeIntegrantePorCpf(p.getCpf())) {
+					return "Integrante " + p.getNome() + " removido de " + nomeBanda + " com sucesso";
+				}
+			}		
 		}
+		return "Nao foi possivel remover o integrante " + p.getNome() + " de " + nomeBanda;
 	}
 	
 	public synchronized String getBandaPorNome(String nome){
@@ -79,7 +85,7 @@ public class BandaDAO {
 		}
 		for (Banda b : bandas) {
 			if (b.getNome().equals(dados[1])) {
-				b.setAnoLancamentoPrimeiraMusica(Integer.parseInt(dados[3]));
+				b.setAnoLancamentoPrimeiraMusica(Integer.parseInt(dados[2]));
 				return "Banda atualizada com sucesso";
 			}
 		}
