@@ -34,11 +34,7 @@ public class PessoaDAO {
 		pessoas.add(p);
 	}
 	
-<<<<<<< HEAD
 	public synchronized String getPessoaPorCpf(String cpf) throws PessoasException{
-=======
-	public synchronized String getPessoaPorCpf(String cpf){
->>>>>>> 16562b59120a32b4fe032311a35883d4471908ae
 		if(pessoas.isEmpty()) {
 			throw new SemPessoasCadastradasException();
 		}

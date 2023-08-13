@@ -30,10 +30,6 @@ public class Banda {
     }
     
     public boolean removeIntegrantePorCpf(String cpf) {
-<<<<<<< HEAD
-    	
-=======
->>>>>>> 16562b59120a32b4fe032311a35883d4471908ae
     	for(Pessoa p : integrantes) {
     		if(p.getCpf().equals(cpf)) {
     			integrantes.remove(p);
@@ -63,7 +59,6 @@ public class Banda {
         this.anoLancamentoPrimeiraMusica = anoLancamentoPrimeiraMusica;
     }
 
-<<<<<<< HEAD
     public Pessoa getIntegrantePorCpf(String cpf) throws BandaException {
     	for(Pessoa p : integrantes) {
     		if(p.getCpf().equals(cpf)){
@@ -72,9 +67,6 @@ public class Banda {
     	}
     	throw new IntegranteNaoEncontradoException(cpf, this.nome);
     }
-=======
->>>>>>> 16562b59120a32b4fe032311a35883d4471908ae
-    
     
 	@Override
 	public String toString() {

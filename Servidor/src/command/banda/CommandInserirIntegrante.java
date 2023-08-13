@@ -34,23 +34,6 @@ public class CommandInserirIntegrante extends CommandImpl {
 			e.printStackTrace();
 			obs.setMsg(e.getMessage());
 		}
-		
-		
-<<<<<<< HEAD
-		
-=======
-		if(dadosPessoa[0].equals("Pessoa nao encontrada")) {
-			obs.setMsg("Pessoa nao encontrada");
-			return ;
-		}
-		
-		Pessoa p = new Pessoa(dadosPessoa[0]);
-		p.setNome(dadosPessoa[1]);
-		p.setEndereco(dadosPessoa[2]);
-		
-		String msg= BandaDAO.getInstance().insertIntegrante(nomeBanda, p);
-		obs.setMsg(msg);
->>>>>>> 16562b59120a32b4fe032311a35883d4471908ae
 	}
 
 }
