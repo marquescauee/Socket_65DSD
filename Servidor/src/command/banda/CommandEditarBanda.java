@@ -1,7 +1,9 @@
 package command.banda;
 
-import command.pessoa.CommandImpl;
+import command.CommandImpl;
 import dao.BandaDAO;
+import exceptions.banda.BandaException;
+import models.Banda;
 import observer.Observer;
 
 public class CommandEditarBanda extends CommandImpl {
@@ -12,8 +14,14 @@ public class CommandEditarBanda extends CommandImpl {
 
 	@Override
 	public void execute() {
-		String msg = BandaDAO.getInstance().atualizarBanda(dados);
-		obs.setMsg(msg);
+	try {
+		BandaDAO.getInstance().atualizarBanda(dados);
+		obs.setMsg("Banda atualizada com sucesso" );
+	} catch (BandaException e) {
+		e.printStackTrace();
+		obs.setMsg(e.getMessage());
+	}
+	//	obs.setMsg(msg);
 	}
 
 }

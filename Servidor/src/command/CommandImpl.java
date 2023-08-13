@@ -1,5 +1,6 @@
-package command.pessoa;
+package command;
 
+import command.pessoa.Command;
 import observer.Observer;
 
 public abstract class CommandImpl implements Command{

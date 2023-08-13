@@ -1,7 +1,8 @@
 package command.banda;
 
-import command.pessoa.CommandImpl;
+import command.CommandImpl;
 import dao.BandaDAO;
+import exceptions.banda.BandaJaCadastradaException;
 import models.Banda;
 import observer.Observer;
 
@@ -19,8 +20,12 @@ public class CommandCriarBanda extends CommandImpl {
 		banda.setNome(splitada[1]);
 		banda.setQntdIntegrantes(Integer.parseInt(splitada[2]));
 		banda.setAnoLancamentoPrimeiraMusica(Integer.parseInt(splitada[3]));
-	
-		BandaDAO.getInstance().insertBanda(banda);
+		try {
+			BandaDAO.getInstance().insertBanda(banda);
+		} catch (BandaJaCadastradaException e) {
+			e.printStackTrace();
+			obs.setMsg(e.getMessage());
+		}
 	}
 
 }

@@ -1,4 +1,4 @@
-package command.pessoa;
+package command;
 
 import command.banda.CommandCriarBanda;
 import command.banda.CommandDeletarBanda;
@@ -7,6 +7,12 @@ import command.banda.CommandEditarBanda;
 import command.banda.CommandGetAllBandas;
 import command.banda.CommandGetBanda;
 import command.banda.CommandInserirIntegrante;
+import command.pessoa.Command;
+import command.pessoa.CommandCriarPessoa;
+import command.pessoa.CommandDeletarPessoa;
+import command.pessoa.CommandEditarPessoa;
+import command.pessoa.CommandGetAllPessoas;
+import command.pessoa.CommandGetPessoa;
 import observer.Observer;
 
 public class CommandFactory {

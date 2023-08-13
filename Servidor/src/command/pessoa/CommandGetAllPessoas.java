@@ -2,13 +2,14 @@ package command.pessoa;
 
 import java.util.List;
 
+import command.CommandImpl;
 import dao.PessoaDAO;
 import models.Pessoa;
 import observer.Observer;
 
 public class CommandGetAllPessoas extends CommandImpl {
 
-	CommandGetAllPessoas(String[] dados, Observer obs) {
+	public CommandGetAllPessoas(String[] dados, Observer obs) {
 		super(dados, obs);
 	}
 

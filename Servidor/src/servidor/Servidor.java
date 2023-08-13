@@ -1,6 +1,10 @@
 package servidor;
 
 import observer.Observer;
+<<<<<<< HEAD
+import command.CommandFactory;
+=======
+>>>>>>> 16562b59120a32b4fe032311a35883d4471908ae
 import command.banda.*;
 
 import java.io.IOException;
@@ -11,7 +15,7 @@ import java.net.Socket;
 
 import command.pessoa.Command;
 import command.pessoa.CommandCriarPessoa;
-import command.pessoa.CommandFactory;
+import exceptions.pessoa.PessoasException;
 
 public class Servidor {
 
@@ -52,18 +56,22 @@ public class Servidor {
 
 						command.execute();
 						//out.write(PessoaDao.getInstance().getPessoaPorCpf(splitada[1]).toString().getBytes());
+<<<<<<< HEAD
+						out.write(obs.getMsg().getBytes());
+=======
 						if(command.getClass() == CommandCriarPessoa.class || command.getClass() == CommandCriarBanda.class  ) {
 							out.close();
 							break;
 						}
 						out.write(obs.getMsg().getBytes());
 						
+>>>>>>> 16562b59120a32b4fe032311a35883d4471908ae
 						out.close();
 						break;
 					    //qtdDadosBrutos = in.read(dadosBrutos);
 					} catch (Exception e) {
-						System.out.println(e.getMessage());
-						out.write(new String("opcao invalida, tente novamente.").getBytes());
+						e.printStackTrace();
+						//out.write(new String("opcao invalida, tente novamente.").getBytes());
 						break;
 					}
 				}

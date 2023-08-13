@@ -1,7 +1,9 @@
-package command.pessoa;
+package command;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import command.pessoa.Command;
 
 public class CommandInvoker {
 

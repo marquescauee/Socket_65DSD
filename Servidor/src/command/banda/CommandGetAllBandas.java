@@ -2,7 +2,7 @@ package command.banda;
 
 import java.util.List;
 
-import command.pessoa.CommandImpl;
+import command.CommandImpl;
 import dao.BandaDAO;
 import models.Banda;
 import observer.Observer;

@@ -1,6 +1,8 @@
 package command.pessoa;
 
+import command.CommandImpl;
 import dao.PessoaDAO;
+import exceptions.pessoa.PessoasException;
 import models.Pessoa;
 import observer.Observer;
 
@@ -19,9 +21,13 @@ public class CommandCriarPessoa extends CommandImpl {
 		p.setEndereco(splitada[3]);
 
 		
-		PessoaDAO.getInstance().insertPessoa(p);
-	    //String msg = PessoaDao.getInstance().insertPessoa(p);
-	    //obs.setMsg(msg);
+		try {
+			PessoaDAO.getInstance().insertPessoa(p);
+			//obs.setMsg("Pessoa " + p + " inserida com sucesso");
+		} catch (PessoasException e) {
+			e.printStackTrace();
+			//obs.setMsg(e.getMessage());
+		}
 	}
 
 }
