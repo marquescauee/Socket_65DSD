@@ -5,9 +5,9 @@ public class Vocalista extends Pessoa{
 	public Vocalista(String cpf) {
 		super(cpf);
 	}
-	
-	public String cantar() {
-		return "Ahhh Ahhh Awnnn";
-	}
+
+	@Override
+	public String comecarShow(String letra) {return letra;}
+
 
 }

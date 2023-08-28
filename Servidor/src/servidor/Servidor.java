@@ -26,40 +26,29 @@ public class Servidor {
 				System.out.println("Conectado com: " + conn.getInetAddress().getHostAddress());
 
 				OutputStream out = conn.getOutputStream();
+				InputStream in = conn.getInputStream();
 
 				Observer obs = new Observer();
-
-				InputStream in = conn.getInputStream();
 
 				byte[] dadosBrutos = new byte[1024];
 				int qtdDadosBrutos = in.read(dadosBrutos);
 
 				while (qtdDadosBrutos >= 0) {
 					String stringDados = new String(dadosBrutos, 0, qtdDadosBrutos);
-					System.out.println(stringDados);
 
 					try {
-						String[] splitada = stringDados.split(";");
-//
-//						Pessoa p = new Pessoa(splitada[1]);
-//
-//						if (splitada.length > 1) {
-//							p.setNome(splitada[2]);
-//							p.setEndereco(splitada[3]);
-//						}
+						String[] dados = stringDados.split(";");
 
 						CommandFactory cmdP = new CommandFactory(obs);
-						Command command = cmdP.getCommand(splitada);
-
+						Command command = cmdP.getCommand(dados);
 						command.execute();
-						//out.write(PessoaDao.getInstance().getPessoaPorCpf(splitada[1]).toString().getBytes());
+
 						out.write(obs.getMsg().getBytes());
 						out.close();
 						break;
-					    //qtdDadosBrutos = in.read(dadosBrutos);
 					} catch (Exception e) {
 						e.printStackTrace();
-						//out.write(new String("opcao invalida, tente novamente.").getBytes());
+						out.write(new String("Opcao inválida, tente novamente.").getBytes());
 						break;
 					}
 				}
@@ -93,3 +82,32 @@ public class Servidor {
 //out.write(msgErro.getBytes());
 //}
 //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -32,4 +32,8 @@ public class Pessoa {
 	public String toString() {
 		return cpf + ";" +  nome + ";" + endereco ;
 	}
+
+    public String comecarShow(String dado) {
+        return "Sou apenas um produtor";
+    }
 }

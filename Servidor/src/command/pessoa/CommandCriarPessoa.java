@@ -14,20 +14,19 @@ public class CommandCriarPessoa extends CommandImpl {
 
 	@Override
 	public void execute() {
-		String[] splitada = getDados();
-		Pessoa p = new Pessoa(splitada[1]);
+		String[] dados = getDados();
+		Pessoa p = new Pessoa(dados[1]);
 
-		p.setNome(splitada[2]);
-		p.setEndereco(splitada[3]);
+		p.setNome(dados[2]);
+		p.setEndereco(dados[3]);
 
-		
 		try {
 			PessoaDAO.getInstance().insertPessoa(p);
-			//obs.setMsg("Pessoa " + p + " inserida com sucesso");
 		} catch (PessoasException e) {
 			e.printStackTrace();
-			//obs.setMsg(e.getMessage());
 		}
 	}
 
 }
+
+
