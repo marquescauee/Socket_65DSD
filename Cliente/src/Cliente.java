@@ -11,6 +11,7 @@ public class Cliente {
 
 		String opcao = "";
 		Scanner s = new Scanner(System.in);
+		
 		while (!opcao.equalsIgnoreCase("sair")) {
 			System.out.println("Digite a opcao desejada no seguinte formato:");
 			System.out.println("=====================================================");
@@ -22,17 +23,21 @@ public class Cliente {
 
 			System.out.println("=====================================================");
 			System.out.println("insertBanda;nome;qtdIntegrantes;anoPrimeiraMusica \t[inserir uma nova banda]\n");
-			System.out.println("updateBanda;nome;anoPrimeiraMusica \t[atualizar os dados de uma banda]\n");
-			System.out.println("deleteBanda;nome \t\t\t\t\t\t[remover uma banda]\n");
+			System.out.println("updateBanda;nome;anoPrimeiraMusica \t\t\t[atualizar os dados de uma banda]\n");
+			System.out.println("deleteBanda;nome \t\t\t\t\t[remover uma banda]\n");
 			System.out.println("insertIntegrante;nomeBanda;cpf \t\t\t\t[adicionar integrante a uma banda]\n");
 			System.out.println("deleteIntegrante;nomeBanda;cpf \t\t\t\t[remover integrante de uma banda]\n");
 			System.out.println("getBanda;nome; \t\t\t\t\t\t[recuperar uma banda]\n");
-			System.out.println("listBandas \t\t\t\t\t\t\t[listar todas as bandas]\n");
+			System.out.println("listBandas \t\t\t\t\t\t[listar todas as bandas]\n");
+			System.out.println("=====================================================");
+			
+			System.out.println("insertMusico;cpf;nome;endereco;tipo \t[inserir uma nova pessoa]\n");
+			System.out.println("comecarShow;banda;letra");
 			System.out.println("=====================================================");
 						
 			System.out.println("sair \t\t[encerrar a aplicacao]\n");
 
-			opcao = s.next();
+			opcao = s.nextLine();
 
 			if(opcao.equals("sair")) {
 				break;
@@ -53,7 +58,7 @@ public class Cliente {
 					System.out.println("===================================\n");
 					qtdDadosBrutos = in.read(dadosBrutos);
 				}
-				opcao = s.nextLine();
+			
 			} catch (UnknownHostException e) {
 				System.out.println("Host nao encontrado");
 				e.printStackTrace();
