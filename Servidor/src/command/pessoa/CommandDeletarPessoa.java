@@ -3,6 +3,7 @@ package command.pessoa;
 import observer.Observer;
 import command.CommandImpl;
 import dao.PessoaDAO;
+import exceptions.banda.BandaException;
 import exceptions.pessoa.PessoasException;
 
 public class CommandDeletarPessoa extends CommandImpl {
@@ -18,7 +19,7 @@ public class CommandDeletarPessoa extends CommandImpl {
 			PessoaDAO.getInstance().removePessoaPorCpf(cpf);
 			//obs.setMsg("Pessoa com cpf " + cpf + " removida com sucesso");
 			obs.setMsg("Pessoa removida com sucesso");
-		} catch (PessoasException e) {
+		} catch (PessoasException | BandaException e) {
 			e.printStackTrace();
 			obs.setMsg(e.getMessage());
 		}

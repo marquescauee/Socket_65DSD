@@ -30,10 +30,12 @@ public class CommandCriarMusico extends CommandImpl {
         musico.setNome(dados[2]);
         musico.setEndereco(dados[3]);
 
+        obs.setMsg("Inserido com sucesso");
         try {
             PessoaDAO.getInstance().insertPessoa(musico);
         } catch (PessoasException e) {
             e.printStackTrace();
+            obs.setMsg("Deu erro");
         }
     }
 }

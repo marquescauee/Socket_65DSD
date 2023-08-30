@@ -1,6 +1,7 @@
 package dao;
 import java.util.List;
 
+import exceptions.banda.BandaException;
 import exceptions.pessoa.PessoaJaCadastradaException;
 import exceptions.pessoa.PessoaNaoEncontradaException;
 import exceptions.pessoa.PessoasException;
@@ -34,13 +35,13 @@ public class PessoaDAO {
 		pessoas.add(p);
 	}
 	
-	public synchronized String getPessoaPorCpf(String cpf) throws PessoasException{
+	public synchronized Pessoa getPessoaPorCpf(String cpf) throws PessoasException{
 		if(pessoas.isEmpty()) {
 			throw new SemPessoasCadastradasException();
 		}
 		for (Pessoa pessoa : pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
-				return pessoa.toString();
+				return pessoa;
 			}
 		}
 		 throw new PessoaNaoEncontradaException(cpf);
@@ -50,7 +51,7 @@ public class PessoaDAO {
 		return pessoas;
 	}
 	
-	public synchronized boolean removePessoaPorCpf(String cpf) throws PessoasException {
+	public synchronized boolean removePessoaPorCpf(String cpf) throws PessoasException, BandaException {
 		if(pessoas.isEmpty()) {
 			throw new SemPessoasCadastradasException();
 		}
@@ -62,6 +63,7 @@ public class PessoaDAO {
 		}
 		if (pRemover != null) {
 			pessoas.remove(pRemover);
+			BandaDAO.getInstance().removeIntegrante(pRemover);
 			return true;
 		}
 		

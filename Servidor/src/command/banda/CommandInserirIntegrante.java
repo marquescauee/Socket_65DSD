@@ -19,16 +19,12 @@ public class CommandInserirIntegrante extends CommandImpl {
 		String nomeBanda = dados[1];
 		String cpfIntegrante = dados[2];
 		
-		String[] dadosPessoa;
+		Pessoa dadosPessoa;
 		try {
-			dadosPessoa = PessoaDAO.getInstance().getPessoaPorCpf(cpfIntegrante).split(";");
+			dadosPessoa = PessoaDAO.getInstance().getPessoaPorCpf(cpfIntegrante);
 			
-			Pessoa p = new Pessoa(dadosPessoa[0]);
-			p.setNome(dadosPessoa[1]);
-			p.setEndereco(dadosPessoa[2]);
-			
-			BandaDAO.getInstance().insertIntegrante(nomeBanda, p);
-			obs.setMsg("Integrante " + p.getNome() + " adicionado a banda " + nomeBanda);
+			BandaDAO.getInstance().insertIntegrante(nomeBanda, dadosPessoa);
+			obs.setMsg("Integrante " + dadosPessoa.getNome() + " adicionado a banda " + nomeBanda);
 			
 		} catch (PessoasException | BandaException e ) {
 			e.printStackTrace();

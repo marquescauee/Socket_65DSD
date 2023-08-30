@@ -14,7 +14,7 @@ import command.pessoa.CommandDeletarPessoa;
 import command.pessoa.CommandEditarPessoa;
 import command.pessoa.CommandGetAllPessoas;
 import command.pessoa.CommandGetPessoa;
-import command.banda.CommandTocarMusica;
+import command.desafio.CommandTocarMusica;
 import observer.Observer;
 
 public class CommandFactory {

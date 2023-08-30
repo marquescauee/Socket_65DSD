@@ -3,7 +3,7 @@ package observer;
 
 public class Observer {
 	
-	private String msg ;
+	private String msg = "";
 	
 	public String getMsg( ) {
 		String aux = msg;

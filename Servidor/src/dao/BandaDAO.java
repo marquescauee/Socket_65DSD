@@ -50,6 +50,23 @@ public class BandaDAO {
 		throw new BandaNaoEncontradaException(nomeBanda);
 	}
 
+	public synchronized boolean removeIntegrante(Pessoa p) throws BandaException {
+
+		for (Banda b : bandas) {
+			for(Pessoa p2 : b.getIntegrantes()) {
+				if (p2.getCpf().equals(p.getCpf())) {
+					if(b.removeIntegrantePorCpf(p.getCpf())){	
+						return true;	
+					}
+				}
+			}
+		}
+		throw new IntegranteNaoEncontradoException("Nenhuma banda",p.getNome());
+		// return "Nao foi possivel remover o integrante " + p.getNome() + " de " +
+		// nomeBanda;
+	}
+
+	
 	public synchronized boolean removeIntegrante(String nomeBanda, Pessoa p) throws BandaException {
 		getBandaPorNome(nomeBanda);
 

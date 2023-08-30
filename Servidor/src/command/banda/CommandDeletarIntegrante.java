@@ -19,16 +19,12 @@ public class CommandDeletarIntegrante extends CommandImpl {
 		String nomeBanda = dados[1];
 		String cpfIntegrante = dados[2];
 		
-		String[] dadosPessoa;
+		Pessoa dadosPessoa;
 		try {
-			dadosPessoa = PessoaDAO.getInstance().getPessoaPorCpf(cpfIntegrante).split(";");
+			dadosPessoa = PessoaDAO.getInstance().getPessoaPorCpf(cpfIntegrante);
 			
-			Pessoa p = new Pessoa(dadosPessoa[0]);
-			p.setNome(dadosPessoa[1]);
-			p.setEndereco(dadosPessoa[2]);
-			
-			BandaDAO.getInstance().removeIntegrante(nomeBanda, p);
-			obs.setMsg("Integrante " + p.getNome() + " removido com sucesso");
+			BandaDAO.getInstance().removeIntegrante(nomeBanda, dadosPessoa);
+			obs.setMsg("Integrante " + dadosPessoa.getNome() + " removido com sucesso");
 		} catch (PessoasException | BandaException e ) {
 			e.printStackTrace();
 			obs.setMsg(e.getMessage());

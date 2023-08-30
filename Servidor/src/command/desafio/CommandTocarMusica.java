@@ -1,4 +1,4 @@
-package command.banda;
+package command.desafio;
 
 import command.CommandImpl;
 import dao.BandaDAO;
@@ -16,15 +16,17 @@ public class CommandTocarMusica extends CommandImpl {
 
     @Override
     public void execute() {
-        String nome = dados[0];
+        String nome = dados[1];
         try {
             List<Pessoa> integrantes = BandaDAO.getInstance().getBandaPorNome(nome).getIntegrantes();
 
             StringBuilder msg = new StringBuilder();
+            msg.append("HORA DO SHOWWW!!!");
             for (Pessoa integrante: integrantes ) {
-                msg.append(integrante.getNome()).append(": ").append(integrante.comecarShow(dados[1])).append("\n");
+                msg.append("\n").append(integrante.getNome()).append(": ").append(integrante.comecarShow(dados[2]));
             }
 
+            System.out.println(msg.toString());
             obs.setMsg(msg.toString());
         } catch (BandaException e) {
             e.printStackTrace();
