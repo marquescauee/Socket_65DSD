@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dee2bde-ae48-4388-b01d-ff5e73b5e05e" name="Changes" comment="Desafio implementadonnnn 🧉🧽" />
+    <list default="true" id="0dee2bde-ae48-4388-b01d-ff5e73b5e05e" name="Changes" comment="Desafio implementadonnnn 2.0 🧉🧽">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/command/desafio/CommandCriarMusico.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/command/desafio/CommandCriarMusico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/command/desafio/CommandTocarMusica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/dao/BandaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/dao/BandaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/exceptions/banda/BandaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/exceptions/banda/BandaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/exceptions/pessoa/PessoasException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/exceptions/pessoa/PessoasException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/models/Baixista.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/models/Baixista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/models/Banda.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/models/Banda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/models/Baterista.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/models/Baterista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/models/Guitarrista.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/models/Guitarrista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/models/Vocalista.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/models/Vocalista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor/src/observer/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor/src/observer/Observer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,11 +34,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -40,6 +54,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/lemes/IdeaProjects/Socket_65DSD/Servidor/src/models",
@@ -51,7 +66,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,7 +86,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Cliente">
+  <component name="RunManager" selected="Application.Servidor">
     <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cliente" />
       <module name="Socket_65DSD" />
@@ -106,6 +121,8 @@
       <workItem from="1692183679502" duration="11712000" />
       <workItem from="1692741888515" duration="850000" />
       <workItem from="1693068584449" duration="6493000" />
+      <workItem from="1693448253279" duration="919000" />
+      <workItem from="1693449192000" duration="2878000" />
     </task>
     <task id="LOCAL-00001" summary="Desafio implementadonnnn 🧉🧽">
       <option name="closed" value="true" />
@@ -147,5 +164,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Desafio implementadonnnn " />
     <option name="LAST_COMMIT_MESSAGE" value="Desafio implementadonnnn " />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

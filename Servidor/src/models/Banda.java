@@ -76,6 +76,7 @@ public class Banda {
 			integrantesToString += "\t ->" + p + "\n";
 		}
 		
-		return nome + ";" + qntdIntegrantes + ";" + anoLancamentoPrimeiraMusica + "\n" + integrantesToString;
+		return nome + ";" + qntdIntegrantes + ";" + anoLancamentoPrimeiraMusica
+                + "\n" + integrantesToString;
 	}
 }

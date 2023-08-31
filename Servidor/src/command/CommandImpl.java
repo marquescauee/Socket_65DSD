@@ -5,8 +5,8 @@ import observer.Observer;
 
 public abstract class CommandImpl implements Command{
 
-	public String [] dados;
-	public Observer obs;
+	protected String [] dados;
+	protected Observer obs;
 	
 	public CommandImpl(String[] dados, Observer obs){
 		this.dados= dados;

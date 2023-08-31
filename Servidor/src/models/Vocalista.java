@@ -7,7 +7,9 @@ public class Vocalista extends Pessoa{
 	}
 
 	@Override
-	public String comecarShow(String letra) {return letra;}
+	public String comecarShow(String letra) {
+		return letra;
+	}
 
 
 }
