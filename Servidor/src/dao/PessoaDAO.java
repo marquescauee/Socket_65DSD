@@ -6,6 +6,7 @@ import exceptions.pessoa.PessoaJaCadastradaException;
 import exceptions.pessoa.PessoaNaoEncontradaException;
 import exceptions.pessoa.PessoasException;
 import exceptions.pessoa.SemPessoasCadastradasException;
+import models.Banda;
 import models.Pessoa;
 
 import java.util.ArrayList;
@@ -59,11 +60,27 @@ public class PessoaDAO {
 		for (Pessoa pessoa : pessoas) {
 			if (pessoa.getCpf().equals(cpf)) {
 				pRemover = pessoa;
+				break;
 			}
 		}
 		if (pRemover != null) {
 			pessoas.remove(pRemover);
-			BandaDAO.getInstance().removeIntegrante(pRemover);
+			
+			Pessoa integranteEncontrado = null;
+			
+			for(Banda b : BandaDAO.getInstance().getBandas()) {
+				for(Pessoa p : b.getIntegrantes()) {
+					if(p.getCpf().equals(pRemover.getCpf())) {
+						integranteEncontrado = p;	
+						break;
+					}	
+				}
+			}
+			
+			if(integranteEncontrado != null) {
+				BandaDAO.getInstance().removeIntegrante(pRemover);
+			}
+			
 			return true;
 		}
 		

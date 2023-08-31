@@ -47,8 +47,8 @@ public class Servidor {
 						out.close();
 						break;
 					} catch (Exception e) {
-						e.printStackTrace();
-						out.write(new String("Opcao inválida, tente novamente.").getBytes());
+						//e.printStackTrace();
+						out.write(new String("Opcao invalida, tente novamente.").getBytes());
 						break;
 					}
 				}
@@ -61,27 +61,6 @@ public class Servidor {
 
 	}
 }
-
-//
-//if(splitada[0].equals("criar")) {
-//try {
-//Pessoa p = new Pessoa(splitada[2]);
-//p.setNome(splitada[1]);
-//p.setEndereco(splitada[3]);
-//
-//command = new  CriarPessoa(p);
-//command.execute();
-//
-//out.write(PessoaDao.getInstance().getPessoaPorCpf(splitada[2]).toString().getBytes());
-//}catch(Exception e) {
-//out.write(msgErro.getBytes());
-//}
-//
-//
-//else {
-//out.write(msgErro.getBytes());
-//}
-//
 
 
 

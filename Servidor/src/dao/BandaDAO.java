@@ -33,18 +33,20 @@ public class BandaDAO {
 	public synchronized boolean insertIntegrante(String nomeBanda, Pessoa p) throws BandaNaoEncontradaException, BandaException {
 		
 		for(Banda b : bandas) {
-			for(Pessoa pes : b.getIntegrantes()) {
-				if (pes.getCpf().equals(p.getCpf())){
-					throw new IntegranteJaExistenteException(p.getNome());
-				}
-			}
-			
 			if(b.getNome().equals(nomeBanda)) {
-				if(b.getQntdIntegrantes() <= b.getIntegrantes().size()) {
-					throw new LimiteIntegrantesException();
+				for(Pessoa pes : b.getIntegrantes()) {
+					if (pes.getCpf().equals(p.getCpf())){
+						throw new IntegranteJaExistenteException(p.getNome());
+					}
 				}
-				b.addIntegrante(p);
-				return true;
+				
+				if(b.getNome().equals(nomeBanda)) {
+					if(b.getQntdIntegrantes() <= b.getIntegrantes().size()) {
+						throw new LimiteIntegrantesException();
+					}
+					b.addIntegrante(p);
+					return true;
+				}
 			}
 		}
 		throw new BandaNaoEncontradaException(nomeBanda);

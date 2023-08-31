@@ -1,1 +1,8 @@
+/.DS_Store
+/command/
+/dao/
+/exceptions/
+/models/
+/observer/
+/servidor/
 /Cliente.class
